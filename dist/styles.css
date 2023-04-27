@@ -1,36 +1,88 @@
-html, * {
-    background-color: black;
-    color: white;
+*{
+    box-sizing: border-box;
+    --active: rgb(126, 194, 149);
+    --darkest: rgb(0, 0, 0);
+    --font-main: rgb(255, 255, 255);
+    --header: rgb(160, 246, 188);
+    --text-background: rgb(124, 207, 198);
+    color: var(--font-main);
 }
 
-h1 {
-    color: white;
-}
-
-p {
-    color: white;
-    position: absolute;
-    top: 10;
-}
-
-img {
+html{ 
+    height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+    max-width:100%;
     width: 100vw;
-    height: 20vh;
-    object-fit: cover;
-    transform: translate(40px);
 }
 
-header{
-    width: 100vw;
+
+header, footer {
+    background-color: var(--header);
     height: 10vh;
     position: relative;
+    width: 100%;
 }
 
 nav {
-    position: absolute;
+    align-items: baseline;
     bottom: 0;
-    right: 50%;
     display: flex;
+    gap: 2rem;
     justify-content: center;
-    gap: 1rem;
+    position: absolute;
+    width: 100%;
+}
+
+.cover {
+    background-color: var(--active);
+    border: 1px solid var(--darkest);
+    border-bottom: 0;
+    border-radius: 5px 5px 0 0;
+    font-weight: 800;
+    padding: 1rem;
+    text-align: center;
+    width: 6rem;
+}
+
+main {
+    background-attachment: fixed;
+    background-image: url('./assets/4452328.jpg');
+    background-size: cover;
+    padding: 2rem 5rem;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 6rem;  
+}
+
+#content {
+    background-color: var(--header);
+    height: 100vh;
+    width: 50%;
+    border-radius: 10px;
+    padding: 3rem 2rem;
+    margin:auto;
+    
+}
+
+.presentation, 
+.about {
+    background-color: var(--text-background);
+}
+
+footer {
+    align-items: center;
+    background-color: var(--header);
+    display: flex;
+    font-weight: 800;
+    justify-content: space-around;
+    padding-top: .5rem;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
 }
