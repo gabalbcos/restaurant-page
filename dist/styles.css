@@ -1,0 +1,36 @@
+html, * {
+    background-color: black;
+    color: white;
+}
+
+h1 {
+    color: white;
+}
+
+p {
+    color: white;
+    position: absolute;
+    top: 10;
+}
+
+img {
+    width: 100vw;
+    height: 20vh;
+    object-fit: cover;
+    transform: translate(40px);
+}
+
+header{
+    width: 100vw;
+    height: 10vh;
+    position: relative;
+}
+
+nav {
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
