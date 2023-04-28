@@ -8,6 +8,7 @@
     --text-background: rgb(124, 207, 198);
     --title-font: 'Oxanium', cursive;
     color: var(--font-main);
+    --body-font: URL(./)
     
 }
 
@@ -104,7 +105,6 @@ main {
     right: 35%;
 }
 
-
 h1 {
     font-family: var(--title-font);
     font-size: 3rem;
@@ -118,13 +118,10 @@ h1 {
     padding: 2rem 1rem;
     width: 70%;
     margin: 1rem auto;
-    text-align: justify;
-    text-justify: inter-word;
-    
 }
 
 .author,
-.schedule h2,
+.main-h2,
 .location h3
  {
    
@@ -135,7 +132,7 @@ h1 {
     padding: .5rem 0 0 1rem;
 }
 
-.schedule h2,
+.main-h2,
 .location h3
  {
     font-size: 24px;
