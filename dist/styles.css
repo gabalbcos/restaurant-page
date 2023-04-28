@@ -4,8 +4,11 @@
     --darkest: rgb(0, 0, 0);
     --font-main: rgb(255, 255, 255);
     --header: rgb(160, 246, 188);
+    --dark-border: rgb(76, 117, 90);
     --text-background: rgb(124, 207, 198);
+    --title-font: 'Oxanium', cursive;
     color: var(--font-main);
+    
 }
 
 html{ 
@@ -18,7 +21,7 @@ html{
 
 header, footer {
     background-color: var(--header);
-    height: 10vh;
+    height: 9vh;
     position: relative;
     width: 100%;
 }
@@ -48,30 +51,97 @@ main {
     background-attachment: fixed;
     background-image: url('./assets/4452328.jpg');
     background-size: cover;
-    padding: 2rem 5rem;
+    padding: 3rem 5rem;
+    font-family: var(--title-font);
 }
 
 .main-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    gap: 6rem;  
+    padding: 0 5rem; 
 }
 
 #content {
     background-color: var(--header);
-    height: 100vh;
-    width: 50%;
-    border-radius: 10px;
+    border-radius: 30px;
     padding: 3rem 2rem;
-    margin:auto;
+    margin: 0 auto;
+    width: 800px;
     
 }
 
-.presentation, 
-.about {
-    background-color: var(--text-background);
+.main-content > div {
+ background-color: var(--text-background);
+ border: 5px solid var(--dark-border);
+ border-radius: 15px;
+ text-align: center;
 }
+
+.presentation {
+    margin: 2rem 0 5rem 0;
+    padding: 1rem .5rem 0.2rem .5rem;
+    position: relative;
+}
+
+.robot-icon,
+.tomato-icon,
+.basket-icon {
+    width: 60px;
+    position: absolute;
+
+}
+
+.robot-icon {
+    left: -4%;
+    bottom: 60%;
+}
+
+.tomato-icon {
+    right: -8%;
+}
+
+.basket-icon {
+    width: 90px;
+    top: -30%;
+    right: 35%;
+}
+
+
+h1 {
+    font-family: var(--title-font);
+    font-size: 3rem;
+}
+
+.about,
+.schedule,
+.location {
+    position: relative;
+    font-size: 18px;
+    padding: 2rem 1rem;
+    width: 70%;
+    margin: 1rem auto;
+    text-align: justify;
+    text-justify: inter-word;
+    
+}
+
+.author,
+.schedule h2,
+.location h3
+ {
+   
+    font-weight: 900;
+    padding: .5rem 0 0 0;
+    
+    text-align: left;
+    padding: .5rem 0 0 1rem;
+}
+
+.schedule h2,
+.location h3
+ {
+    font-size: 24px;
+    margin: .4rem 0;
+}
+/* FOOTER */
 
 footer {
     align-items: center;
