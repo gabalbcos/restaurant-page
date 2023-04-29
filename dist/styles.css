@@ -130,10 +130,8 @@ h1 {
 .main-h2,
 .location h3
  {
-   
     font-weight: 900;
     padding: .5rem 0 0 0;
-    
     text-align: left;
     padding: .5rem 0 0 1rem;
 }
@@ -144,6 +142,68 @@ h1 {
     font-size: 24px;
     margin: .4rem 0;
 }
+
+/* Food Menu */
+.menu {
+    text-align: center;
+}
+.food-title {
+    background-color: var(--text-background);
+    border: 5px solid var(--dark-border);
+    border-radius: 15px;
+    font-weight: 900;
+    font-size: 34px;
+    width: 350px;
+    padding: 1rem;
+    margin: 2rem auto;
+}
+
+.food-item {
+    position: relative;
+    background-color: var(--text-background);
+    border: 5px solid var(--dark-border);
+    border-radius: 15px;    
+    padding: 2rem 2rem;
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+}
+
+.food-name {
+    font-size: 22px;
+    font-weight: 800;
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.food-bio {
+    text-align:justify;
+    padding: 0 4rem;
+    margin: 0 auto;
+    line-height: 18px;
+    margin-bottom: 1.3rem;
+}
+
+.food-price {
+    text-align: left;
+    font-size: 18px;
+    padding-left: 4rem;
+}
+
+.food-img {
+    background-color: var(--text-background);
+    border: 2px solid var(--dark-border);
+    border-radius: 5px; 
+    width: 250px;
+    height: auto;
+    position: absolute;
+    right: 20%;
+    bottom: 5%;
+}
+
+
+
+
 /* FOOTER */
 
 footer {
