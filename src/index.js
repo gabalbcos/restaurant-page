@@ -108,36 +108,72 @@ function menuTab() {
     mainButton.classList.add('hidden');
     contactButton.classList.add('hidden');
 
-    const mainDiv = document.createElement('div');
-        mainDiv.classList.add('main-content');
-        mainDiv.setAttribute('id', 'main-content');
+    const menuDiv = document.createElement('div');
+        menuDiv.classList.add('main-content');
+        menuDiv.setAttribute('id', 'main-content');
 
-    const presentationDiv = document.createElement('div');
-        presentationDiv.classList.add('presentation');
+    /* Menu Title*/
 
-        const titleDiv = document.createElement('div');
-            titleDiv.classList.add('title-div');
-            
-            const robotIcon = document.createElement('img');
-                robotIcon.setAttribute('src', './assets/bot.png');
-                robotIcon.setAttribute('alt', 'icon of a robot head');
-                robotIcon.classList.add('robot-icon');
-
-            const tomatoIcon = document.createElement('img');
-                tomatoIcon.setAttribute('src', './assets/tomato.png');
-                tomatoIcon.setAttribute('alt', 'icon of a tomato');    
-                tomatoIcon.classList.add('tomato-icon');
-
-            const titleH1 = document.createElement('h1');
-                  titleH1.classList.add('title');
-                  titleH1.innerText = 'Menu'; 
-
-        titleDiv.append(robotIcon, tomatoIcon, titleH1);          
-        presentationDiv.appendChild(titleDiv);
-        mainDiv.appendChild(presentationDiv);
+        const presentationDiv = document.createElement('div');
+            presentationDiv.classList.add('presentation');
     
-     content.append(mainDiv)   
+            const titleDiv = document.createElement('div');
+                titleDiv.classList.add('title-div');
+                
+                const robotIcon = document.createElement('img');
+                    robotIcon.setAttribute('src', './assets/bot.png');
+                    robotIcon.setAttribute('alt', 'icon of a robot head');
+                    robotIcon.classList.add('robot-icon');
+    
+                const tomatoIcon = document.createElement('img');
+                    tomatoIcon.setAttribute('src', './assets/tomato.png');
+                    tomatoIcon.setAttribute('alt', 'icon of a tomato');    
+                    tomatoIcon.classList.add('tomato-icon');
+    
+                const titleH1 = document.createElement('h1');
+                      titleH1.classList.add('title');
+                      titleH1.innerText = 'Menu'; 
+    
+            titleDiv.append(robotIcon, tomatoIcon, titleH1);          
+            presentationDiv.appendChild(titleDiv);
+    
+            menuDiv.appendChild(presentationDiv);
+    
+    /* beverages */
+    const foodTitleDiv = document.createElement('div');
+        foodTitleDiv.classList.add('food-title');
+            const h2Food = document.createElement('h2');
+            h2Food.innerText = 'Beverages';
+            foodTitleDiv.append(h2Food);
 
+    menuDiv.appendChild(foodTitleDiv);
+    /* Beverage items creation*/
+
+    const elements = beverages.map(item => {
+        const el = document.createElement('div');
+        el.classList.add('food-item');
+            const h3Name = document.createElement('h3');
+            h3Name.innerText = `${item.name}`;
+            h3Name.classList.add('food-name');
+            
+            const pBio = document.createElement('p');
+            pBio.innerText = `${item.description}`;
+            pBio.classList.add('food-bio');
+
+            const pPrice = document.createElement('p');
+            pPrice.innerText = `${item.price}`;
+            pPrice.classList.add('food-price');
+
+            const imgFood = document.createElement('img');
+            imgFood.setAttribute('src', `./assets/${item.img}`);
+            imgFood.setAttribute('alt', `${item.alt}`);
+            imgFood.classList.add('food-img');
+        el.append(h3Name, pBio, pPrice, imgFood);
+        menuDiv.append(el);        
+        
+    });
+
+     content.append(menuDiv)   
 }
 
 function contactTab() {
