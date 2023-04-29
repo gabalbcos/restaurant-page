@@ -1,8 +1,17 @@
+import {beverages, sides, mainDishes} from "./food-list.js";
+
+console.log(beverages);
+console.log(sides);
+console.log(mainDishes);
+
 const content = document.querySelector('#content');
-const mainButton = document.querySelector('#Home');
+const mainButton = document.querySelector('#home');
+const menuButton = document.querySelector('#menu');
+const contactButton = document.querySelector('#contact');
+
 
 mainButton.addEventListener('click', mainTab);
-
+menuButton.addEventListener('click', menuTab);
 // schedule array
 
 const schedule = ['Sunday: 8am - 8pm', 'Monday: 8am - 8pm', 'Tuesday: 8am - 8pm', 'Wednesday: 8am - 8pm', 'Thursday: 8am - 10pm', 'Friday: 8am - 12pm', 'Saturday: 8am - 12pm' ];
@@ -10,6 +19,9 @@ const schedule = ['Sunday: 8am - 8pm', 'Monday: 8am - 8pm', 'Tuesday: 8am - 8pm'
 
 function mainTab() {
     content.innerHTML = '';
+    mainButton.classList.remove('hidden');
+    menuButton.classList.add('hidden');
+    contactButton.classList.add('hidden');
 
     const mainDiv = document.createElement('div');
         mainDiv.classList.add('main-content');
@@ -89,3 +101,45 @@ function mainTab() {
     
          
     }
+
+function menuTab() {
+    content.innerHTML = '';
+    menuButton.classList.remove('hidden');
+    mainButton.classList.add('hidden');
+    contactButton.classList.add('hidden');
+
+    const mainDiv = document.createElement('div');
+        mainDiv.classList.add('main-content');
+        mainDiv.setAttribute('id', 'main-content');
+
+    const presentationDiv = document.createElement('div');
+        presentationDiv.classList.add('presentation');
+
+        const titleDiv = document.createElement('div');
+            titleDiv.classList.add('title-div');
+            
+            const robotIcon = document.createElement('img');
+                robotIcon.setAttribute('src', './assets/bot.png');
+                robotIcon.setAttribute('alt', 'icon of a robot head');
+                robotIcon.classList.add('robot-icon');
+
+            const tomatoIcon = document.createElement('img');
+                tomatoIcon.setAttribute('src', './assets/tomato.png');
+                tomatoIcon.setAttribute('alt', 'icon of a tomato');    
+                tomatoIcon.classList.add('tomato-icon');
+
+            const titleH1 = document.createElement('h1');
+                  titleH1.classList.add('title');
+                  titleH1.innerText = 'Menu'; 
+
+        titleDiv.append(robotIcon, tomatoIcon, titleH1);          
+        presentationDiv.appendChild(titleDiv);
+        mainDiv.appendChild(presentationDiv);
+    
+     content.append(mainDiv)   
+
+}
+
+function contactTab() {
+
+}

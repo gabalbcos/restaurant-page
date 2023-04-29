@@ -48,11 +48,16 @@ nav {
     width: 6rem;
 }
 
+.hidden {
+    background-color: var(--header);
+}
+
 main {
     background-attachment: fixed;
     background-image: url('./assets/4452328.jpg');
     background-size: cover;
     padding: 3rem 5rem;
+    min-height: 100vh;
     font-family: var(--title-font);
 }
 
@@ -66,6 +71,7 @@ main {
     padding: 3rem 2rem;
     margin: 0 auto;
     width: 800px;
+    height: 100%;
     
 }
 
