@@ -170,10 +170,74 @@ function menuTab() {
             imgFood.classList.add('food-img');
         el.append(h3Name, pBio, pPrice, imgFood);
         menuDiv.append(el);        
-        
     });
 
-     content.append(menuDiv)   
+    /* Sides */
+    const foodTitleDiv2 = document.createElement('div');
+        foodTitleDiv2.classList.add('food-title');
+            const h3Food = document.createElement('h2');
+            h3Food.innerText = 'Sides';
+            foodTitleDiv2.append(h3Food);
+    menuDiv.appendChild(foodTitleDiv2);
+    /* Side items creation*/
+
+    const elements2 = sides.map(item => {
+        const el = document.createElement('div');
+        el.classList.add('food-item');
+            const h3Name = document.createElement('h3');
+            h3Name.innerText = `${item.name}`;
+            h3Name.classList.add('food-name');
+            
+            const pBio = document.createElement('p');
+            pBio.innerText = `${item.description}`;
+            pBio.classList.add('food-bio');
+
+            const pPrice = document.createElement('p');
+            pPrice.innerText = `${item.price}`;
+            pPrice.classList.add('food-price');
+
+            const imgFood = document.createElement('img');
+            imgFood.setAttribute('src', `./assets/${item.img}`);
+            imgFood.setAttribute('alt', `${item.alt}`);
+            imgFood.classList.add('food-img');
+        el.append(h3Name, pBio, pPrice, imgFood);
+        menuDiv.append(el);        
+    });
+
+   /* Main Dishes*/
+   const foodTitleDiv3 = document.createElement('div');
+   foodTitleDiv3.classList.add('food-title');
+       const h4Food = document.createElement('h2');
+       h4Food.innerText = 'Main Dishes';
+       foodTitleDiv3.append(h4Food);
+menuDiv.appendChild(foodTitleDiv3);
+/* Main dishes items creation*/
+
+const elements3 = mainDishes.map(item => {
+   const el = document.createElement('div');
+   el.classList.add('food-item');
+       const h3Name = document.createElement('h3');
+       h3Name.innerText = `${item.name}`;
+       h3Name.classList.add('food-name');
+       
+       const pBio = document.createElement('p');
+       pBio.innerText = `${item.description}`;
+       pBio.classList.add('food-bio');
+
+       const pPrice = document.createElement('p');
+       pPrice.innerText = `${item.price}`;
+       pPrice.classList.add('food-price');
+
+       const imgFood = document.createElement('img');
+       imgFood.setAttribute('src', `./assets/${item.img}`);
+       imgFood.setAttribute('alt', `${item.alt}`);
+       imgFood.classList.add('food-img');
+   el.append(h3Name, pBio, pPrice, imgFood);
+   menuDiv.append(el);        
+});
+
+
+     content.append(menuDiv); 
 }
 
 function contactTab() {
