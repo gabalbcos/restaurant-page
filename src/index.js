@@ -1,8 +1,9 @@
-import {beverages, sides, mainDishes} from "./food-list.js";
+import {beverages, sides, mainDishes, contacts} from "./food-list.js";
 
 console.log(beverages);
 console.log(sides);
 console.log(mainDishes);
+console.log(contacts);
 
 const content = document.querySelector('#content');
 const mainButton = document.querySelector('#home');
@@ -12,6 +13,7 @@ const contactButton = document.querySelector('#contact');
 
 mainButton.addEventListener('click', mainTab);
 menuButton.addEventListener('click', menuTab);
+contactButton.addEventListener('click', contactTab);
 // schedule array
 
 const schedule = ['Sunday: 8am - 8pm', 'Monday: 8am - 8pm', 'Tuesday: 8am - 8pm', 'Wednesday: 8am - 8pm', 'Thursday: 8am - 10pm', 'Friday: 8am - 12pm', 'Saturday: 8am - 12pm' ];
@@ -241,5 +243,77 @@ const elements3 = mainDishes.map(item => {
 }
 
 function contactTab() {
+    content.innerHTML = '';
+    menuButton.classList.add('hidden');
+    mainButton.classList.add('hidden');
+    contactButton.classList.remove('hidden');
+
+    const contactDiv = document.createElement('div');
+    contactDiv.classList.add('contact');
+
+    /* Menu Title*/
+
+    const contactsDiv = document.createElement('div');
+        contactsDiv.classList.add('main-content');
+        contactsDiv.setAttribute('id', 'main-content');
+
+    
+
+    const presentationDiv = document.createElement('div');
+    presentationDiv.classList.add('presentation');
+
+    const titleDiv = document.createElement('div');
+        titleDiv.classList.add('title-div');
+        
+        const robotIcon = document.createElement('img');
+            robotIcon.setAttribute('src', './assets/bot.png');
+            robotIcon.setAttribute('alt', 'icon of a robot head');
+            robotIcon.classList.add('robot-icon');
+
+        const tomatoIcon = document.createElement('img');
+            tomatoIcon.setAttribute('src', './assets/tomato.png');
+            tomatoIcon.setAttribute('alt', 'icon of a tomato');    
+            tomatoIcon.classList.add('tomato-icon');
+
+        const titleH1 = document.createElement('h1');
+              titleH1.classList.add('title');
+              titleH1.innerText = 'Contact'; 
+
+    titleDiv.append(robotIcon, tomatoIcon, titleH1);          
+    presentationDiv.appendChild(titleDiv);
+
+    contactsDiv.appendChild(presentationDiv);
+    contactDiv.appendChild(contactsDiv);
+    /* Contact */
+
+    /* Beverage items creation*/
+
+    const elements = contacts.map(item => {
+        const el = document.createElement('div');
+        el.classList.add('contact-item');
+            const h3Name = document.createElement('h3');
+            h3Name.innerText = `${item.name}`;
+            h3Name.classList.add('contact-name');
+            
+            const pBio = document.createElement('p');
+            pBio.innerText = `${item.bio}`;
+
+            const pPhone = document.createElement('p');
+            pPhone.innerText = `${item.phone}`;
+
+            const pEmail = document.createElement('p');
+            pEmail.innerText = `${item.email}`;
+
+            const imgContact = document.createElement('img');
+            imgContact.setAttribute('src', `./assets/${item.img}`);
+            imgContact.setAttribute('alt', `${item.alt}`);
+            imgContact.classList.add('contact-img');
+        el.append(h3Name, pBio, pPhone, pEmail, imgContact);
+        contactDiv.append(el);        
+    });
+
+
+
+     content.append(contactDiv);
 
 }

@@ -1,4 +1,4 @@
-export {beverages, sides, mainDishes};
+export {beverages, sides, mainDishes, contacts};
 
 
 const beverages = [
@@ -52,3 +52,29 @@ const mainDishes = [
     }
 ];
 
+const contacts = [
+    {
+        name: 'Mr. Carrot Face',
+        bio: 'chef',
+        phone: '555-555-555',
+        email: 'mr_carrot@vegetables.com',
+        img: 'carrot-man.png',
+        alt: 'mr Carrot Face'
+    },
+    {
+        name: 'Ms. Peach',
+        bio: 'manager',
+        phone: '555-555-555',
+        email: 'peaches_peaches@green.com',
+        img: 'peach.jpg',
+        alt: 'ms. Peach'
+    },
+    {
+        name: 'Mr. Potato Head',
+        bio: 'owner',
+        phone: '555-555-555',
+        email: 'potato_potato@chipsvinegars.com',
+        img: 'potato-face.jpg',
+        alt: 'mr. Potato Head'
+    }
+];
